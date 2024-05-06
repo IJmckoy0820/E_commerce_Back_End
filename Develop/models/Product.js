@@ -58,9 +58,7 @@ Product.init(
         unique: false
       }
 
-    },
-    
-
+    }
 
 
   },
