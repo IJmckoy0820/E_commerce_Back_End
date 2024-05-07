@@ -17,19 +17,19 @@ Product.init(
       autoIncrement: true
     },
 
-    category_name: {
+    product_name: {
       type: DataTypes.STRING,
       allowNull: false
 
     },
 
-    Price: {
-      type: DataTypes.DECIMAL(10, 2),
+    price: {
+      type: DataTypes.DECIMAL,
       allowNull: false,
 
       validate: {
 
-        isDecimal: true,
+        isDecimal: true
 
       }
 
@@ -42,7 +42,7 @@ Product.init(
       defaultValue: 10,
       validate: {
 
-        isInt: true,
+        isInt: true
 
       }
 
@@ -51,11 +51,10 @@ Product.init(
     },
     category_id: {
       type: DataTypes.INTEGER,
-
+      allowNull: true,
       references: {
-        model: 'Category',
-        key: 'id',
-        unique: false
+        model: 'category',
+        key: 'id'
       }
 
     }
@@ -67,7 +66,7 @@ Product.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'product',
+    modelName: 'product'
   }
 );
 
